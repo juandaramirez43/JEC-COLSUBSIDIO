@@ -1,20 +1,37 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# JEC COLSUBSIDIO
 
-# Run and deploy your AI Studio app
+Dashboard interno para consultar y consolidar información operativa del programa educativo JEC COLSUBSIDIO. La aplicación reúne datos almacenados en Google Sheets y Google Drive para facilitar el seguimiento de la operación por mes y colegio, y la generación de reportes.
 
-This contains everything you need to run your app locally.
+## ¿Qué permite hacer?
 
-View your app in AI Studio: https://ai.studio/apps/226b5f02-040e-4b37-853b-a5563a0f08df
+- Consultar reportes del periodo seleccionado y filtrar la información por colegio.
+- Revisar datos de seguimiento diario, novedades/listas, planeaciones, refrigerios y docentes.
+- Consultar reportes de reemplazos y el historial de planeaciones.
+- Identificar registros de niños con valores de asistencia en cero.
+- Consultar respaldos de listas y descargar reportes para análisis o seguimiento.
+- Explorar la interfaz con datos simulados o conectarla a un servicio de Google Apps Script.
 
-## Run Locally
+Los reportes se presentan mediante indicadores y tablas. Su disponibilidad y contenido dependen de las hojas y carpetas configuradas en Google Drive y de las funciones implementadas en Apps Script.
 
-**Prerequisites:**  Node.js
+## Componentes
 
+- **Interfaz web:** React, TypeScript y Vite.
+- **Servicio de datos:** Google Apps Script publicado como aplicación web.
+- **Fuente de información:** Google Sheets y archivos de Google Drive.
+- **Exportación de hojas de cálculo:** biblioteca `xlsx`.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+La interfaz está en `src/` y el código del servicio de Apps Script en `google-apps-script/Code.gs`.
+
+## Requisitos
+
+- Node.js y npm.
+- Una URL de aplicación web de Google Apps Script para consultar datos reales.
+- Acceso a las hojas y carpetas de Google Drive que utiliza el servicio.
+
+## Ejecución local
+
+1. Clona este repositorio y entra en su carpeta.
+2. Instala las dependencias:
+
+   ```bash
+   npm install
